@@ -10,7 +10,9 @@ var app = express();
 const route = require('./routes/route');
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost:27017:contactlist');
+mongoose.connect('mongodb://localhost:27017/contactlist',{
+   useMongoClient: true
+})
 
 //on connection
 mongoose.connection.on('connected', ()=>{
